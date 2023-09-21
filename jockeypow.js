@@ -2,7 +2,7 @@
 const playHuman = (humanChoice) => {
     console.log (humanChoice)
 
-    console.log('return ' + playMachine())
+    playTheGame(humanChoice, playMachine())
 }
 
 //Agora precisamos pegar a escolha da máquina, que vai ser aleatória entre as opçoes
@@ -15,4 +15,9 @@ const playMachine = () => {
     return choices [randomNumber]
 }
 
-// parei no 15:26 do vídeo 
+//  Agora é preciso verificar quem ganhou, o humano ou a máquina
+
+const playTheGame = (human,machine) => {
+
+    console.log('Humano: ' + human + "Maquina:" + machine)
+}
