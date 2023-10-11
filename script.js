@@ -7,6 +7,20 @@ const machineScore = document.querySelector('#machine-score')
 let humanScoreNumber = 0
 let machineScoreNumber = 0
 
+// ENUM para chamar variáveis e ficar mais facilmente editável seu código 
+
+/* 
+humanScoreNumber -> Camel Case
+GAME_OPTIONS -> Snake case (mais comumente utilizado para ENUM)
+*/
+// ENUMS
+const GAME_OPTIONS = {
+    ROCK: 'rock',
+    PAPER: 'paper',
+    SCISSORS: 'scissors'
+}
+
+
 //Precisa criar uma funçao que identifique toda vez que for jogado 
 const playHuman = (humanChoice) => {
     console.log (humanChoice)
@@ -16,8 +30,10 @@ const playHuman = (humanChoice) => {
 
 //Agora precisamos pegar a escolha da máquina, que vai ser aleatória entre as opçoes
 
+// Ex de ENUM abaixo 
 const playMachine = () => {
     const choices = ['rock', 'paper', 'scissors']
+// ou const choices = [GAME_OPTIONS.ROCK, 'paper', 'scissors'] para utilizar ENUM.
     const randomNumber = Math.floor(Math.random() * 3)
 
 
