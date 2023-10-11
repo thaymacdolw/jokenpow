@@ -1,3 +1,12 @@
+// constante do resultado : ganhou, perdeu ou empate
+const result = document.querySelector('.result')
+const humanScore = document.querySelector('#human-score')
+const machineScore = document.querySelector('#machine-score')
+
+
+let humanScoreNumber = 0
+let machineScoreNumber = 0
+
 //Precisa criar uma funçao que identifique toda vez que for jogado 
 const playHuman = (humanChoice) => {
     console.log (humanChoice)
@@ -20,4 +29,19 @@ const playMachine = () => {
 const playTheGame = (human,machine) => {
 
     console.log('Humano: ' + human + "Maquina:" + machine)
+
+    if(human === machine) {
+        result.innerHTML = "A draw"
+    } else if ( (human === 'paper' && machine === 'rock')||
+    (human === 'rock' && machine ==='scissors') ||
+    (human === 'scissors' && machine === 'paper')
+    ) {
+        humanScoreNumber++
+        humanScore.innerHTML = humanScoreNumber
+        result.innerHTML = "You won"
+    } else {
+        machineScoreNumber++
+        machineScore.innerHTML = machineScoreNumber
+        result.innerHTML = "Alexa won"
+    }
 }
